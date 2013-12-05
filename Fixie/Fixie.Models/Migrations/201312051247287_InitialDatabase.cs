@@ -12,6 +12,7 @@ namespace Fixie.Models.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
                         Type = c.Int(nullable: false),
                         ComplexityLevelTemplate_Id = c.Int(),
                         PriorityLevelTemplate_Id = c.Int(),
@@ -86,6 +87,7 @@ namespace Fixie.Models.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
                         Card_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
@@ -97,6 +99,7 @@ namespace Fixie.Models.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
                         Description = c.String(),
                         Card_Id = c.Int(),
                         Scenario_Id = c.Int(),
@@ -112,10 +115,6 @@ namespace Fixie.Models.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Created = c.DateTime(),
-                        CreatedBy = c.Int(nullable: false),
-                        Modified = c.DateTime(),
-                        ModifiedBy = c.Int(nullable: false),
                         Sequence = c.Int(nullable: false),
                         Name = c.String(),
                         PriorityLevelTemplate_Id = c.Int(),
@@ -129,6 +128,7 @@ namespace Fixie.Models.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
                         Description = c.String(),
                         Card_Id = c.Int(),
                     })
@@ -180,6 +180,7 @@ namespace Fixie.Models.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
             

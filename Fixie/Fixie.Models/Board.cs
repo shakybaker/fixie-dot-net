@@ -15,6 +15,7 @@ namespace Fixie.Models
         }
 
         public int Id { get; set; }
+        public string Name { get; set; }
         public BoardType Type { get; set; }
         public IList<Lane> Lanes { get; set; }
         public PriorityLevelTemplate PriorityLevelTemplate { get; set; }
