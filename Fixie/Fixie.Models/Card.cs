@@ -25,11 +25,11 @@ namespace Fixie.Models
         public string Notes { get; set; }
         public PriorityLevel Priority { get; set; }
         public ComplexityLevel Complexity { get; set; }
-        public List<UserLink> UserLinks { get; set; }
-        public List<Blocker> Blockers { get; set; }
-        public List<Bug> Bugs { get; set; }
-        public List<Scenario> Scenarios { get; set; }
-        public List<Task> Tasks { get; set; }
+        public virtual List<UserLink> UserLinks { get; set; }
+        public virtual List<Blocker> Blockers { get; set; }
+        public virtual List<Bug> Bugs { get; set; }
+        public virtual List<Scenario> Scenarios { get; set; }
+        public virtual List<Task> Tasks { get; set; }
         public SprintGoal SprintGoal { get; set; }
 
         public bool HasBugs()
