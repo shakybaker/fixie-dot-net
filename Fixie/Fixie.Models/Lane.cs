@@ -12,6 +12,7 @@ namespace Fixie.Models
             Cards = new List<Card>();
         }
 
+        public int Id { get; set; }
         public int Sequence { get; set; }
         public string Name { get; set; }
         public IList<Card> Cards { get; set; }
