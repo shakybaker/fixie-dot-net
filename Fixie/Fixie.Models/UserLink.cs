@@ -7,8 +7,6 @@ namespace Fixie.Models
 {
     public class UserLink
     {
-        public int Id { get; set; }
-
         public User User { get; set; }
         public UserLinkType LinkType { get; set; }
     }

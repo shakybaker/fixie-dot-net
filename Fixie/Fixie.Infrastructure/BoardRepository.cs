@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Fixie.Infrastructure
 {
+    /*
     public class BoardRepository : IBoardRepository
     {
         private readonly FixieContext _dbContext;
@@ -16,7 +17,7 @@ namespace Fixie.Infrastructure
             _dbContext = dbContext;
         }
 
-        public Board Get(int id)
+        public Board Get(string id)
         {
             return _dbContext.Boards.FirstOrDefault(x => x.Id == id);
         }
@@ -42,4 +43,5 @@ namespace Fixie.Infrastructure
             return _dbContext.Boards.Where(x => x.Name.StartsWith(text)).ToList();
         }
     }
+     * */
 }

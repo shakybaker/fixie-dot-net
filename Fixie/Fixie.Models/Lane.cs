@@ -7,8 +7,6 @@ namespace Fixie.Models
 {
     public class Lane
     {
-        public int Id { get; set; }
-
         public Lane()
         {
             Cards = new List<Card>();
@@ -16,6 +14,6 @@ namespace Fixie.Models
 
         public int Sequence { get; set; }
         public string Name { get; set; }
-        public virtual IList<Card> Cards { get; set; }
+        public IList<Card> Cards { get; set; }
     }
 }

@@ -36,6 +36,15 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.0.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\packages\mongocsharpdriver.1.8.3\lib\net35\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\packages\mongocsharpdriver.1.8.3\lib\net35\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoRepository">
+      <HintPath>..\packages\MongoRepository.1.6.1\lib\MongoRepository.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -54,13 +63,7 @@
     <Compile Include="Comment.cs" />
     <Compile Include="ComplexityLevel.cs" />
     <Compile Include="ComplexityLevelTemplate.cs" />
-    <Compile Include="FixieContext.cs" />
     <Compile Include="Lane.cs" />
-    <Compile Include="Migrations\201312051247287_InitialDatabase.cs" />
-    <Compile Include="Migrations\201312051247287_InitialDatabase.Designer.cs">
-      <DependentUpon>201312051247287_InitialDatabase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PriorityLevel.cs" />
     <Compile Include="PriorityLevelTemplate.cs" />
     <Compile Include="Project.cs" />
@@ -74,12 +77,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Documentation.chm" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201312051247287_InitialDatabase.resx">
-      <DependentUpon>201312051247287_InitialDatabase.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

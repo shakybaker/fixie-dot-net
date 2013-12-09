@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoRepository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,17 +20,16 @@ namespace Fixie.Models
             Complexity = new ComplexityLevel();
         }
 
-        public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string Notes { get; set; }
         public PriorityLevel Priority { get; set; }
         public ComplexityLevel Complexity { get; set; }
-        public virtual List<UserLink> UserLinks { get; set; }
-        public virtual List<Blocker> Blockers { get; set; }
-        public virtual List<Bug> Bugs { get; set; }
-        public virtual List<Scenario> Scenarios { get; set; }
-        public virtual List<Task> Tasks { get; set; }
+        public List<UserLink> UserLinks { get; set; }
+        public List<Blocker> Blockers { get; set; }
+        public List<Bug> Bugs { get; set; }
+        public List<Scenario> Scenarios { get; set; }
+        public List<Task> Tasks { get; set; }
         public SprintGoal SprintGoal { get; set; }
 
         public bool HasBugs()

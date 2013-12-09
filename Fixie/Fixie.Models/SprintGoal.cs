@@ -7,8 +7,6 @@ namespace Fixie.Models
 {
     public class SprintGoal
     {
-        public int Id { get; set; }
-
         public SprintGoal()
         {
             GoalMet = false;

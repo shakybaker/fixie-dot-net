@@ -14,10 +14,9 @@ namespace Fixie.Models
             Lanes = new List<Lane>();
         }
 
-        public int Id { get; set; }
         public string Name { get; set; }
         public BoardType Type { get; set; }
-        public virtual IList<Lane> Lanes { get; set; }
+        public IList<Lane> Lanes { get; set; }
         public PriorityLevelTemplate PriorityLevelTemplate { get; set; }
         public ComplexityLevelTemplate ComplexityLevelTemplate { get; set; }
     }

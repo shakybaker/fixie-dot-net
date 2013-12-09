@@ -1,14 +1,13 @@
-﻿using System;
+﻿using MongoRepository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace Fixie.Models
 {
-    public class Project
+    public class Project : Entity
     {
-        public int Id { get; set; }
-
         public Project()
         {
             Boards = new List<Board>();
@@ -16,6 +15,6 @@ namespace Fixie.Models
 
         public string Name { get; set; }
         public string Description { get; set; }
-        public IList<Board> Boards { get; set; }
+        public virtual IList<Board> Boards { get; set; }
     }
 }

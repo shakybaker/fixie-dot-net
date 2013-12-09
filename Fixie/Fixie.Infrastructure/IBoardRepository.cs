@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Fixie.Infrastructure
 {
-    public interface IBoardRepository : IRepository<Board, int>
+    public interface IBoardRepository : IRepository<Board, string>
     {
         IEnumerable<Board> FindAll();
         IEnumerable<Board> Find(string text);
