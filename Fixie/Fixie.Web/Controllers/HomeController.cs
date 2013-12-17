@@ -15,33 +15,31 @@ namespace Fixie.Web.Controllers
         public ActionResult Index()
         {
             ViewBag.Title = "Home Page";
-            //var repo = new BoardRepository(new FixieContext());
-            //var boards = repo.FindAll();
 
 
             var project = AddTestProject();
-            //projectRepo.DeleteAll();
-            //projectRepo.Add(new[] { project });
+            projectRepo.DeleteAll();
+            projectRepo.Add(new[] { project });
 
 
-            foreach (Project p in projectRepo)
-            {
-                //p.Boards.Where(x => x.Name == "Test").FirstOrDefault().Lanes.Where(x => x.Sequence == 1).FirstOrDefault().Name = "UPDATED NAME";
+            //foreach (Project p in projectRepo)
+            //{
+            //    //p.Boards.Where(x => x.Name == "Test").FirstOrDefault().Lanes.Where(x => x.Sequence == 1).FirstOrDefault().Name = "UPDATED NAME";
 
-                //foreach (var b in p.Boards)
-                //{
-                //    foreach (var l in b.Lanes)
-                //    {
-                //        if (l.Sequence == 2)
-                //        {
-                //            l.Name = "ANOTHER UPDATED";
-                //        }
-                //    }
-                //}
-                //projectRepo.Update(p);
+            //    //foreach (var b in p.Boards)
+            //    //{
+            //    //    foreach (var l in b.Lanes)
+            //    //    {
+            //    //        if (l.Sequence == 2)
+            //    //        {
+            //    //            l.Name = "ANOTHER UPDATED";
+            //    //        }
+            //    //    }
+            //    //}
+            //    //projectRepo.Update(p);
 
 
-            };
+            //};
 
             return View();
         }
@@ -61,187 +59,175 @@ namespace Fixie.Web.Controllers
             var project = new Project
             {
                 Name = "Test Project",
-                Boards = new List<Board> { new Board
-            {
-                Id = 1,
-                Name = "Test",
-                Type = BoardType.Board,
-                Lanes =
+                Boards = new List<Board> 
+                { 
+                    new Board
+                    {
+                        Id = 1,
+                        Name = "Test me please",
+                        LaneTemplate = new LaneTemplate 
+                        {
+                            Lanes = new List<Lane> 
                             {
                                 new Lane
+                                {
+                                    Id = 1,
+                                    Sequence = 1,
+                                    Name = "To Do"
+                                },
+                                new Lane
+                                {
+                                    Id = 2,
+                                    Sequence = 2,
+                                    Name = "In Progress"
+                                },
+                                new Lane
+                                {
+                                    Id = 3,
+                                    Sequence = 3,
+                                    Name = "Developed"
+                                },
+                                new Lane
+                                {
+                                    Id = 4,
+                                    Sequence = 4,
+                                    Name = "Ready to Test"
+                                },
+                                new Lane
+                                {
+                                    Id = 5,
+                                    Sequence = 5,
+                                    Name = "Ready for UAT"
+                                }
+                            }
+                        },
+                        Cards = new List<Card>
+                            {
+                                new Card
                                     {
                                         Id = 1,
-                                        Sequence = 1,
-                                        Name = "To Do",
-                                        Cards = new List<Card>
-                                            {
-                                                new Card
-                                                    {
-                                                        Id = 1,
-                                                        Name = "Volutpat metus, quis euismod massa scelerisque",
-                                                        Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-                                                        Priority = high,
-                                                        Complexity = sp13
-                                                    }
-                                            }
+                                        LaneId = 1,
+                                        Name = "Volutpat metus, quis euismod massa scelerisque",
+                                        Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                                        Priority = high,
+                                        Complexity = sp13
                                     },
-                                new Lane
+                                new Card
                                     {
                                         Id = 2,
-                                        Sequence = 2,
-                                        Name = "In Progress",
-                                        Cards = new List<Card>
-                                            {
-                                                new Card
-                                                    {
-                                                        Id = 2,
-                                                        Name = "Diam fringilla porta",
-                                                        Description = "Nulla nec nulla ac ligula ultricies feugiat aliquet eget justo",
-                                                        Priority = high,
-                                                        Complexity = sp13
-                                                    },
-                                                new Card
-                                                    {
-                                                        Id = 3,
-                                                        Name = "Consectetur adipiscing elit",
-                                                        Description = "Nunc dapibus volutpat metus, quis euismod massa scelerisque a",
-                                                        Priority = medium,
-                                                        Complexity = sp3
-                                                    }
-                                            }
+                                        LaneId = 1,
+                                        Name = "Diam fringilla porta",
+                                        Description = "Nulla nec nulla ac ligula ultricies feugiat aliquet eget justo",
+                                        Priority = high,
+                                        Complexity = sp13
                                     },
-                                new Lane
+                                new Card
                                     {
                                         Id = 3,
-                                        Sequence = 3,
-                                        Name = "Developed",
-                                        Cards = new List<Card>
-                                            {
-                                                new Card
-                                                    {
-                                                        Id = 4,
-                                                        Name = "Lorem ipsum dolor",
-                                                        Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-                                                        Priority = high,
-                                                        Complexity = sp20
-                                                    },
-                                                new Card
-                                                    {
-                                                        Id = 5,
-                                                        Name = "Consectetur adipiscing elit",
-                                                        Description = "Cras consequat ipsum quis purus dignissim eu molestie nulla sagittis",
-                                                        Priority = low,
-                                                        Complexity = sp1, 
-                                                        Bugs = new List<Bug> { new Bug { Description = "OH NO!!!!!!" } }
-                                                    },
-                                                new Card
-                                                    {
-                                                        Id = 6,
-                                                        Name = "Lorem ipsum dolor",
-                                                        Description = "Proin facilisis odio eget odio rhoncus quis lobortis est commodo",
-                                                        Priority = medium,
-                                                        Complexity = sp5
-                                                    }
-                                            }
+                                        LaneId = 1,
+                                        Name = "Consectetur adipiscing elit",
+                                        Description = "Nunc dapibus volutpat metus, quis euismod massa scelerisque a",
+                                        Priority = medium,
+                                        Complexity = sp3
                                     },
-                                new Lane
+                                new Card
                                     {
                                         Id = 4,
-                                        Sequence = 4,
-                                        Name = "Ready to Test",
-                                        Cards = new List<Card>
-                                            {
-                                                new Card
-                                                    {
-                                                        Id = 7,
-                                                        Name = "Consectetur adipiscing elit",
-                                                        Description =
-                                                            "Donec ullamcorper ante a massa imperdiet at ullamcorper ligula consectetur",
-                                                        Priority = high,
-                                                        Complexity = sp20
-                                                    },
-                                                new Card
-                                                    {
-                                                        Id = 8,
-                                                        Name = "Diam fringilla porta",
-                                                        Description = "Morbi tincidunt enim quis risus tincidunt ornare",
-                                                        Priority = low,
-                                                        Complexity = sp1
-                                                    },
-                                                new Card
-                                                    {
-                                                        Id = 9,
-                                                        Name = "Lorem ipsum dolor",
-                                                        Description = "Nulla nec nulla ac ligula ultricies feugiat aliquet eget justo",
-                                                        Priority = medium,
-                                                        Complexity = sp5
-                                                    }
-                                            }
+                                        LaneId = 2,
+                                        Name = "Lorem ipsum dolor",
+                                        Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                                        Priority = high,
+                                        Complexity = sp20
                                     },
-                                new Lane
+                                new Card
                                     {
                                         Id = 5,
-                                        Sequence = 5,
-                                        Name = "Ready for UAT",
-                                        Cards = new List<Card>
-                                            {
-                                                new Card
-                                                    {
-                                                        Id = 10,
-                                                        Name = "Lorem ipsum dolor",
-                                                        Description = "Phasellus vel urna eget mi feugiat aliquam id quis risus",
-                                                        Priority = low,
-                                                        Complexity = sp20
-                                                    },
-                                                new Card
-                                                    {
-                                                        Id = 11,
-                                                        Name = "Consectetur adipiscing elit",
-                                                        Description = "Nulla quis turpis sem, sed aliquet ipsum",
-                                                        Priority = low,
-                                                        Complexity = sp1
-                                                    }
-                                            }
+                                        LaneId = 3,
+                                        Name = "Consectetur adipiscing elit",
+                                        Description = "Cras consequat ipsum quis purus dignissim eu molestie nulla sagittis",
+                                        Priority = low,
+                                        Complexity = sp1, 
+                                        Bugs = new List<Bug> { new Bug { Description = "OH NO!!!!!!" } }
                                     },
-                                new Lane
+                                new Card
                                     {
                                         Id = 6,
-                                        Sequence = 6,
-                                        Name = "Passed",
-                                        Cards = new List<Card>
-                                            {
-                                                new Card
-                                                    {
-                                                        Id = 12,
-                                                        Name = "Lorem ipsum dolor",
-                                                        Description = "In non nunc sed sem imperdiet porttitor",
-                                                        Priority = medium,
-                                                        Complexity = sp8
-                                                    }
-                                            }
+                                        LaneId = 3,
+                                        Name = "Lorem ipsum dolor",
+                                        Description = "Proin facilisis odio eget odio rhoncus quis lobortis est commodo",
+                                        Priority = medium,
+                                        Complexity = sp5
                                     },
-                                new Lane
+                                new Card
                                     {
                                         Id = 7,
-                                        Sequence = 7,
-                                        Name = "Done",
-                                        Cards = new List<Card>
-                                            {
-                                                new Card
-                                                    {
-                                                        Id = 13,
-                                                        Name = "Diam fringilla porta",
-                                                        Description =
-                                                            "Integer vulputate quam sit amet diam fringilla porta rutrum dolor pharetra",
-                                                        Priority = medium,
-                                                        Complexity = sp5
-                                                    }
-                                            }
+                                        LaneId = 3,
+                                        Name = "Consectetur adipiscing elit",
+                                        Description =
+                                            "Donec ullamcorper ante a massa imperdiet at ullamcorper ligula consectetur",
+                                        Priority = high,
+                                        Complexity = sp20
+                                    },
+                                new Card
+                                    {
+                                        Id = 8,
+                                        LaneId = 3,
+                                        Name = "Diam fringilla porta",
+                                        Description = "Morbi tincidunt enim quis risus tincidunt ornare",
+                                        Priority = low,
+                                        Complexity = sp1
+                                    },
+                                new Card
+                                    {
+                                        Id = 9,
+                                        LaneId = 3,
+                                        Name = "Lorem ipsum dolor",
+                                        Description = "Nulla nec nulla ac ligula ultricies feugiat aliquet eget justo",
+                                        Priority = medium,
+                                        Complexity = sp5
+                                    },
+                                new Card
+                                    {
+                                        Id = 10,
+                                        LaneId = 3,
+                                        Name = "Lorem ipsum dolor",
+                                        Description = "Phasellus vel urna eget mi feugiat aliquam id quis risus",
+                                        Priority = low,
+                                        Complexity = sp20
+                                    },
+                                new Card
+                                    {
+                                        Id = 11,
+                                        LaneId = 4,
+                                        Name = "Consectetur adipiscing elit",
+                                        Description = "Nulla quis turpis sem, sed aliquet ipsum",
+                                        Priority = low,
+                                        Complexity = sp1
+                                    },
+                                new Card
+                                    {
+                                        Id = 12,
+                                        LaneId = 4,
+                                        Name = "Lorem ipsum dolor",
+                                        Description = "In non nunc sed sem imperdiet porttitor",
+                                        Priority = medium,
+                                        Complexity = sp8
+                                    },
+                                new Card
+                                    {
+                                        Id = 13,
+                                        LaneId = 4,
+                                        Name = "Diam fringilla porta",
+                                        Description =
+                                            "Integer vulputate quam sit amet diam fringilla porta rutrum dolor pharetra",
+                                        Priority = medium,
+                                        Complexity = sp5
                                     }
                             }
-            }}
-
+                    }
+                }
             };
+
             return project;
         }
     }

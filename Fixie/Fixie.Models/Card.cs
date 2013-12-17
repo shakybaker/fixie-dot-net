@@ -24,6 +24,7 @@ namespace Fixie.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public string Notes { get; set; }
+        public int LaneId { get; set; }
         public PriorityLevel Priority { get; set; }
         public ComplexityLevel Complexity { get; set; }
         public List<UserLink> UserLinks { get; set; }

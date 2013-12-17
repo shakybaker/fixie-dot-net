@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Fixie.Models
+namespace Fixie.Models.Enums
 {
     public enum UserLinkType
     {

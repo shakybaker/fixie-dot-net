@@ -1,4 +1,5 @@
 ﻿using Fixie.Models;
+using Fixie.Models.Enums;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -33,25 +34,14 @@ namespace Fixie.Tests
         }
 
         [Test]
-        public void Can_add_a_lane_to_a_board()
+        public void Can_add_a_lane_to_a_lane_template()
         {
-            var sut = new Board();
+            var sut = new LaneTemplate();
             var lane = new Lane();
 
             sut.Lanes.Add(lane);
 
             Assert.AreEqual(1, sut.Lanes.Count);
-        }
-
-        [Test]
-        public void Can_add_a_card_to_a_lane()
-        {
-            var sut = new Lane();
-            var sprint = new Card();
-
-            sut.Cards.Add(sprint);
-
-            Assert.AreEqual(1, sut.Cards.Count);
         }
 
         [Test]

@@ -57,7 +57,6 @@
   <ItemGroup>
     <Compile Include="Blocker.cs" />
     <Compile Include="Board.cs" />
-    <Compile Include="BoardType.cs" />
     <Compile Include="Bug.cs" />
     <Compile Include="Card.cs" />
     <Compile Include="Comment.cs" />
@@ -65,6 +64,7 @@
     <Compile Include="ComplexityLevelTemplate.cs" />
     <Compile Include="Lane.cs" />
     <Compile Include="PriorityLevel.cs" />
+    <Compile Include="LaneTemplate.cs" />
     <Compile Include="PriorityLevelTemplate.cs" />
     <Compile Include="Project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,7 +73,7 @@
     <Compile Include="Task.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserLink.cs" />
-    <Compile Include="UserLinkType.cs" />
+    <Compile Include="Enums\UserLinkType.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
